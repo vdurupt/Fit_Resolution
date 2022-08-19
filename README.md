@@ -6,4 +6,4 @@ Ceci est le procédé général pour produire dans un format pratique les donné
 
 Les différents fichiers/dossiers ont le rôle suivant :
 - notebooks : scripts d'analyse des données
-- simScore : fichiers produits par [truth definition](https://github.com/valsdav/DeepSuperCluster/tree/master/NtuplesProduction/input_dataset_truth)
+- simScore : fichiers produits par [truth definition](https://github.com/valsdav/DeepSuperCluster/tree/master/NtuplesProduction/input_dataset_truth), ils contiennent les "sim fraction thresholds" (*Expliquer ce que c'est*)
