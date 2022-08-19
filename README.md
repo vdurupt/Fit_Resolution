@@ -10,5 +10,5 @@ Les différents fichiers/dossiers ont le rôle suivant :
 - `reco_dumper.py` est le script du dumper
 - `run_reco_dumper.py` est le script qui permet de lancer le dumper avec les bonnes options (voir exemple dans la suite)
 - `condor_reco_dumper.py` permet de lancer le dumper en utilisant HTCondor (permet de paralléliser les tâches efficacement) pour les calculs longs
-- `Moustache.C` et `calo_association.py` font quoi ????
+- `Moustache.C` et `calo_association.py` sont des scripts appelés par les scripts de plus haut niveau
 - `join_datasets.py` est un script a lancer après `condor_reco_dumper.py` pour agréger l'ensemble des données en un seul fichier panda
