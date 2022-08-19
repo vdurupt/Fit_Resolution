@@ -1,5 +1,5 @@
 # Code pour analyser and evaluer les performances de DeepSC sur des données au data-tier RECO
-Les données RECO sont celles en sortie de l'algorithme de reconstruction
+Les données RECO sont celles en sortie de l'algorithme de reconstruction.
 
 ## Reco dumper
 Ceci est le procédé général pour produire dans un format pratique les données venant de l'algorithme de reconstruction. Il permet d'obtenir les données pour **Moustache** ou pour **DeepSC** avec les stratégies A, B, C ou D pour des données produites par ParticleGun pour électrons/photons. Ce dumper transforme des données stockées dans des arbres (.root) en données stockées sous tableaux panda. Les notebooks analysent les données stockées dans ces tableaux. Le script réalisant le dumper est `reco_dumper.py`, les autres permettent d'automatiser le procédé.
@@ -12,3 +12,19 @@ Les différents fichiers/dossiers ont le rôle suivant :
 - `condor_reco_dumper.py` permet de lancer le dumper en utilisant HTCondor (permet de paralléliser les tâches efficacement) pour les calculs longs
 - `Moustache.C` et `calo_association.py` sont des scripts appelés par les scripts de plus haut niveau
 - `join_datasets.py` est un script a lancer après `condor_reco_dumper.py` pour agréger l'ensemble des données en un seul fichier panda
+
+Le dumper peut fonctionner de deux manières différentes :
+- **loop-on-calo** :  information is saved for each PFCluster seed matched to a CaloParticle.
+- **loop-on-reco** : the dumper works on the final SC or reco (electron/photon) collection and saves information for each reco object
+
+Pour chaque objet (photon/électron), les informations suivantes sont sauvegardées :
+- informations pour le calomatching (matcher les traces du tracker avec les clusters)
+- informations pour le genmatching by DeltaR (matcher les caloparticules aux particules générées)
+- position et énergie de chaque seed et objet
+- nombre de clusters sélectionnés
+- Gen energie (énergie de la particule générée) et sim energie (énergie reconstituée par la simulation utilisée tracker/ECAL) pour les pour les caloparticules/genparticules matchées
+- information sur le pileup (PU)
+- Number of event and run to be able to perform matching in the case the reconstruction is done two times with different algos.
+
+##Comment faire tourner le dumper
+
