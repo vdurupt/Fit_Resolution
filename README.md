@@ -7,3 +7,8 @@ Ceci est le procédé général pour produire dans un format pratique les donné
 Les différents fichiers/dossiers ont le rôle suivant :
 - notebooks : scripts d'analyse des données
 - simScore : fichiers produits par [truth definition](https://github.com/valsdav/DeepSuperCluster/tree/master/NtuplesProduction/input_dataset_truth), ils contiennent les "sim fraction thresholds" (*Expliquer ce que c'est*)
+- `reco_dumper.py` est le script du dumper
+- `run_reco_dumper.py` est le script qui permet de lancer le dumper avec les bonnes options (voir exemple dans la suite)
+- `condor_reco_dumper.py` permet de lancer le dumper en utilisant HTCondor (permet de paralléliser les tâches efficacement) pour les calculs longs
+- `Moustache.C` et `calo_association.py` font quoi ????
+- `join_datasets.py` est un script a lancer après `condor_reco_dumper.py` pour agréger l'ensemble des données en un seul fichier panda
