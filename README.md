@@ -1,9 +1,5 @@
-# Truth preparation
+# Code pour analyser and evaluer les performances de DeepSC sur des données au data-tier RECO
+Les données RECO sont celles en sortie de l'algorithme de reconstruction
 
-This folder contains the code and notebook to analyze the raw dataset in order to extract the best truth information for
-the seed-cluster matching. 
-
-## Dataset preparation
-
-A simple ntuplizer is applied on the output of the [RecoSimDumper](https://github.com/bmarzocc/RecoSimStudies).
-The baseline files contain all the objects for each event: pfClusters,Rechits, caloparticle info. 
+## Reco dumper
+Ceci est le procédé général pour produire dans un format pratique les données venant de l'algorithme de reconstruction. Il permet d'obtenir les données pour **Moustache** ou pour **DeepSC** avec les stratégies A, B, C ou D pour des données produites par ParticleGun pour électrons/photons.
