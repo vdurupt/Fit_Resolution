@@ -68,7 +68,8 @@ Les options sont :
                         Reco collection (none/electron/photon)
                         
   -cf CONDOR_FOLDER, --condor-folder CONDOR_FOLDER
-                        Dossier condor où sont stockées outputs de condor (condor_ndjson par défaut)```
+                        Dossier condor où sont stockées outputs de condor (condor_ndjson par défaut)
+```
 
 
 Pour analyser les photons (en utilisant **DeepSC** avec la stratégie de collection A) en bouclant sur les objets reconstruits (pour étudier la reconstruction par exemple), j'ai utilisé la commande suivante :
