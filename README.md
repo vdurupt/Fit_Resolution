@@ -2,7 +2,7 @@
 Les données RECO sont celles en sortie de l'algorithme de reconstruction.
 
 ## Reco dumper
-Ceci est le procédé général pour produire dans un format pratique les données venant de l'algorithme de reconstruction. Il permet d'obtenir les données pour **Moustache** ou pour **DeepSC** avec les stratégies A, B, C ou D pour des données produites par ParticleGun pour électrons/photons. Ce dumper transforme des données stockées dans des arbres (.root) en données stockées sous tableaux panda. Les notebooks analysent les données stockées dans ces tableaux. Le script réalisant le dumper est `reco_dumper.py`, les autres permettent d'automatiser le procédé.
+Ceci est le procédé général pour produire dans un format pratique les données venant de l'algorithme de reconstruction. Il permet d'obtenir les données pour **Moustache** ou pour **DeepSC** avec les stratégies A, B, C ou D pour des données produites par ParticleGun pour électrons/photons. Ce dumper transforme des données stockées dans des arbres (`.root`) en données stockées sous tableaux panda. Les notebooks analysent les données stockées dans ces tableaux. Le script réalisant le dumper est `reco_dumper.py`, les autres permettent d'automatiser le procédé.
 
 Les différents fichiers/dossiers ont le rôle suivant :
 - notebooks : scripts d'analyse des données
@@ -76,6 +76,7 @@ Pour analyser les photons (en utilisant **DeepSC** avec la stratégie de collect
 ``` python3 condor_reco_dumper.py -i /eos/cms/store/group/dpg_ecal/alca_ecalcalib/bmarzocc/Clustering/FourGammasGunPt1-100_pythia8_StdMixing_Flat55To75_14TeV_123X_mcRun3_2021_realistic_v11_UL18_pfRechitThres_Dumper_SCRegression_PhoRegression_DeepSC_AlgoA_125X_bugFix -o /eos/user/v/vdurupt/reco_comparison_corrected/photons/pho_UL18_123X_DeepSC_AlgoA/ -a sim_fraction --wp-file simScore_Minima_PhotonsOnly_updated.root -nfg 40 -q espresso --compress --reco-collection photon ```
 
 **Attention, il faut que le répertoire de sortie `-o` soit dans EOS.**
+Le choix de la valeur limite de `sim_fraction` est fixé dans `run_reco_dumper.py`.
 Une fois cette commande effectuée, le répertoire `CONDOR_FOLDER` est créé avec les différents fichiers nécessaires à la demande de calcul pour condor. Il faut donc aller dans ce répertoire et soumettre le travail à condor par la commande : `condor_submit condor_job.txt`
 
 Pour vérifier l'état d'avancement du travail, on peut utiliser `condor_q` et pour enlever un travail de la liste d'attente, la commande est `condor_rm JOBID`.
