@@ -27,4 +27,31 @@ Pour chaque objet (photon/électron), les informations suivantes sont sauvegard�
 - Number of event and run to be able to perform matching in the case the reconstruction is done two times with different algos.
 
 ##Comment faire tourner le dumper
+Pour faire tourner le dumper avec condor, il faut éxécuter `condor_reco_dumper.py` :
+`python3 condor_reco_dumper.py` avec les options suivantes (dans l'ordre) :
+`usage: condor_reco_dumper.py [-h] -i INPUTDIR -nfg NFILE_GROUP -o OUTPUTDIR -a ASSOC_STRATEGY [--wp-file WP_FILE] -q QUEUE [-e EOS] [-c] [--redo] [-d] [--loop-on-calo] [-s SC_COLLECTION] [-r RECO_COLLECTION] [-cf CONDOR_FOLDER]`
 
+Les options sont :
+`  -h, --help            show this help message and exit
+  -i INPUTDIR, --inputdir INPUTDIR
+                        Inputdir
+  -nfg NFILE_GROUP, --nfile-group NFILE_GROUP
+                        How many files per numpy file
+  -o OUTPUTDIR, --outputdir OUTPUTDIR
+                        Outputdir
+  -a ASSOC_STRATEGY, --assoc-strategy ASSOC_STRATEGY
+                        Association strategy
+  --wp-file WP_FILE     File with sim fraction thresholds
+  -q QUEUE, --queue QUEUE
+                        Condor queue
+  -e EOS, --eos EOS     EOS instance user/cms
+  -c, --compress        Compress output
+  --redo                Redo all files
+  -d, --debug           debug
+  --loop-on-calo        If true, loop only on calo-seeds, not on all the SC
+  -s SC_COLLECTION, --sc-collection SC_COLLECTION
+                        SuperCluster collection
+  -r RECO_COLLECTION, --reco-collection RECO_COLLECTION
+                        Reco collection (none/electron/photon)
+  -cf CONDOR_FOLDER, --condor-folder CONDOR_FOLDER
+                        Condor folder`
