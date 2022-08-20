@@ -53,13 +53,13 @@ Les options sont :
                         
   -e EOS, --eos EOS     EOS instance user/cms
   
-  -c, --compress        Compress output
+  -c, --compress        Compresse les fichier d'output (à utiliser si on veut concaténer les résultats)
   
   --redo                Redo all files
   
   -d, --debug           debug
   
-  --loop-on-calo        If true, loop only on calo-seeds, not on all the SC
+  --loop-on-calo        Si cette option est vraie, le script boucle seulement sur les calo-seeds et pas sur l'ensemble des SC
   
   -s SC_COLLECTION, --sc-collection SC_COLLECTION
                         SuperCluster collection
@@ -68,4 +68,19 @@ Les options sont :
                         Reco collection (none/electron/photon)
                         
   -cf CONDOR_FOLDER, --condor-folder CONDOR_FOLDER
-                        Condor folder```
+                        Dossier condor où sont stockées outputs de condor (condor_ndjson par défaut)```
+
+
+Pour analyser les photons (en utilisant **DeepSC** avec la stratégie de collection A) en bouclant sur les objets reconstruits (pour étudier la reconstruction par exemple), j'ai utilisé la commande suivante :
+```
+python3 condor_reco_dumper.py -i /eos/cms/store/group/dpg_ecal/alca_ecalcalib/bmarzocc/Clustering/FourGammasGunPt1-100_pythia8_StdMixing_Flat55To75_14TeV_123X_mcRun3_2021_realistic_v11_UL18_pfRechitThres_Dumper_SCRegression_PhoRegression_DeepSC_AlgoA_125X_bugFix -o /eos/user/v/vdurupt/reco_comparison_corrected/photons/pho_UL18_123X_DeepSC_AlgoA/ -a sim_fraction --wp-file simScore_Minima_PhotonsOnly_updated.root -nfg 40 -q espresso --compress --reco-collection photon
+```
+Attention, il faut que le répertoire de sortie `-o` soit dans EOS.
+Une fois cette commande effectuée, le répertoire `CONDOR_FOLDER` est créé avec les différentes fichiers nécessaires à la demande de calcul pour condor. Il faut donc aller dans ce répertoire et soumettre le travail à condor par la commande : `condor_submit condor_job.txt`
+
+Pour vérifier l'état d'avancement du travail, on peut utiliser `condor_q` et pour enlever un travail de la liste d'attente, la commande est `condor_rm JOBID`.
+Une fois que ces calculs sont terminés, les outputs sont disponibles dans le répertoire spécifié dans l'option `-o` de `condor_reco_dumper.py`. Il reste une étape pour le tableau panda plus facilement utilisable : la concaténation des output.
+
+Pour cela la commande est la suivante : `python3 join_datasets.py -i /eos/user/v/vdurupt/reco_comparison_corrected/photons/pho_UL18_123X_DeepSC_AlgoA/ -o /eos/user/v/vdurupt/reco_comparison_corrected/supercluster_regression/photons/pho_UL18_123X_DeepSC_AlgoA_{type}.h5py`
+Avec `-i` le répertoire où sont stockés les données précédentes.
+
