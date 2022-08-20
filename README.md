@@ -87,5 +87,7 @@ Pour cela la commande est la suivante :
 `python3 join_datasets.py -i /eos/user/v/vdurupt/reco_comparison_corrected/photons/pho_UL18_123X_DeepSC_AlgoA/ -o /eos/user/v/vdurupt/reco_comparison_corrected/supercluster_regression/photons/pho_UL18_123X_DeepSC_AlgoA_{type}.h5py`
 Avec `-i` le répertoire où sont stockés les données précédentes.
 
+Le script `run_dumper_example.sh` est un exemple de script pour soumettre simultanément plusieurs jobs à condor et de stocker les résultats dans des fichiers différents. Le script `join_all.sh` permet de concaténer les output des différents fichiers une fois que `run_dumper_example.sh` a fini de s'éxécuter. Ces deux scripts permettent d'automatiser le processus s'il doit être fait pour plusieurs stratégies par exemple.
+
 ## Analyse DeepSC vs. Moustache
 Les données (sous le format `.h5py` de panda) sont ensuite utilisées pour comparer DeepSC à Moustache ou pour comparer les différentes stratégies de collection de DeepSC. Les notebooks utilisés pour réaliser ces analyses se trouvent dans le répertoire [notebooks](https://github.com/vdurupt/Fit_Resolution/notebooks).
