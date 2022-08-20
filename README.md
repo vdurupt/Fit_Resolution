@@ -31,7 +31,8 @@ Pour faire tourner le dumper avec condor, il faut éxécuter `condor_reco_dumper
 `python3 condor_reco_dumper.py` 
 
 Les options sont :
-```  -h, --help            pour afficher les options
+```  
+  -h, --help            pour afficher les options
 
   -i INPUTDIR, --inputdir INPUTDIR
                         répertoire des données de simulation
