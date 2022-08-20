@@ -1,4 +1,4 @@
-# Code pour analyser and evaluer les performances de DeepSC par rapport à Moustache sur des données au data-tier RECO
+# Code pour analyser and evaluer les performances de DeepSC par rapport à Moustache (sur des données au data-tier RECO)
 Les données RECO sont celles en sortie de l'algorithme de reconstruction.
 
 ## Reco dumper
