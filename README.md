@@ -81,6 +81,7 @@ Une fois cette commande effectuée, le répertoire `CONDOR_FOLDER` est créé av
 Pour vérifier l'état d'avancement du travail, on peut utiliser `condor_q` et pour enlever un travail de la liste d'attente, la commande est `condor_rm JOBID`.
 Une fois que ces calculs sont terminés, les outputs sont disponibles dans le répertoire spécifié dans l'option `-o` de `condor_reco_dumper.py`. Il reste une étape pour le tableau panda plus facilement utilisable : la concaténation des output.
 
-Pour cela la commande est la suivante : `python3 join_datasets.py -i /eos/user/v/vdurupt/reco_comparison_corrected/photons/pho_UL18_123X_DeepSC_AlgoA/ -o /eos/user/v/vdurupt/reco_comparison_corrected/supercluster_regression/photons/pho_UL18_123X_DeepSC_AlgoA_{type}.h5py`
+Pour cela la commande est la suivante :
+`python3 join_datasets.py -i /eos/user/v/vdurupt/reco_comparison_corrected/photons/pho_UL18_123X_DeepSC_AlgoA/ -o /eos/user/v/vdurupt/reco_comparison_corrected/supercluster_regression/photons/pho_UL18_123X_DeepSC_AlgoA_{type}.h5py`
 Avec `-i` le répertoire où sont stockés les données précédentes.
 
