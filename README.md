@@ -28,8 +28,7 @@ Pour chaque objet (photon/électron), les informations suivantes sont sauvegard�
 
 ## Comment faire tourner le dumper
 Pour faire tourner le dumper avec condor, il faut éxécuter `condor_reco_dumper.py` :
-`python3 condor_reco_dumper.py` avec les options suivantes (dans l'ordre) :
-`usage: condor_reco_dumper.py [-h] -i INPUTDIR -nfg NFILE_GROUP -o OUTPUTDIR -a ASSOC_STRATEGY [--wp-file WP_FILE] -q QUEUE [-e EOS] [-c] [--redo] [-d] [--loop-on-calo] [-s SC_COLLECTION] [-r RECO_COLLECTION] [-cf CONDOR_FOLDER]`
+`python3 condor_reco_dumper.py` 
 
 Les options sont :
 ```  -h, --help            pour afficher les options
