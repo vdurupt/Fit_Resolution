@@ -32,26 +32,40 @@ Pour faire tourner le dumper avec condor, il faut éxécuter `condor_reco_dumper
 `usage: condor_reco_dumper.py [-h] -i INPUTDIR -nfg NFILE_GROUP -o OUTPUTDIR -a ASSOC_STRATEGY [--wp-file WP_FILE] -q QUEUE [-e EOS] [-c] [--redo] [-d] [--loop-on-calo] [-s SC_COLLECTION] [-r RECO_COLLECTION] [-cf CONDOR_FOLDER]`
 
 Les options sont :
-`  -h, --help            show this help message and exit
+`  -h, --help            pour afficher les options
+
   -i INPUTDIR, --inputdir INPUTDIR
-                        Inputdir
+                        répertoire des données de simulation
+                        
   -nfg NFILE_GROUP, --nfile-group NFILE_GROUP
-                        How many files per numpy file
+                        Nombre de fichiers par fichier numpy
+                        
   -o OUTPUTDIR, --outputdir OUTPUTDIR
-                        Outputdir
+                        répertoire de sortie du script
+                        
   -a ASSOC_STRATEGY, --assoc-strategy ASSOC_STRATEGY
-                        Association strategy
-  --wp-file WP_FILE     File with sim fraction thresholds
+                        Stratégie d'association (sim_fraction voir [truth definition](https://github.com/valsdav/DeepSuperCluster/tree/master/NtuplesProduction/input_dataset_truth))
+                        
+  --wp-file WP_FILE     Fichier avec les limites de sim_fraction
+  
   -q QUEUE, --queue QUEUE
-                        Condor queue
+                        File d'attente de condor (donne la priorité du calcul, voir [flavors](https://batchdocs.web.cern.ch/local/submit.html))
+                        
   -e EOS, --eos EOS     EOS instance user/cms
+  
   -c, --compress        Compress output
+  
   --redo                Redo all files
+  
   -d, --debug           debug
+  
   --loop-on-calo        If true, loop only on calo-seeds, not on all the SC
+  
   -s SC_COLLECTION, --sc-collection SC_COLLECTION
                         SuperCluster collection
+                        
   -r RECO_COLLECTION, --reco-collection RECO_COLLECTION
                         Reco collection (none/electron/photon)
+                        
   -cf CONDOR_FOLDER, --condor-folder CONDOR_FOLDER
                         Condor folder`
