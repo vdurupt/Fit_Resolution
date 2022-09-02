@@ -91,3 +91,5 @@ Le script `run_dumper_example.sh` est un exemple de script pour soumettre simult
 
 ## Analyse DeepSC vs. Moustache
 Les données (sous le format `.h5py` de panda) sont ensuite utilisées pour comparer DeepSC à Moustache ou pour comparer les différentes stratégies de collection de DeepSC. Les notebooks utilisés pour réaliser ces analyses se trouvent dans le répertoire [notebooks](https://github.com/vdurupt/Fit_Resolution/notebooks) et sont réalisés avec swan.
+
+Peut être faudrait-il réessayer de produire les WP-FILE avec  [truth definition](https://github.com/valsdav/DeepSuperCluster/tree/master/NtuplesProduction/input_dataset_truth) en fonction les différentes stratégies de collection et reessayer le dumper ensuite. Ca n'avait pas fonctionné pour moi mais il est fortement possible que je n'utilisais pas le dumper correctement à ce moment
