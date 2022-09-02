@@ -1,6 +1,8 @@
 # Code pour analyser and evaluer les performances de DeepSC par rapport à Moustache (sur des données au data-tier RECO)
 Les données RECO sont celles en sortie de l'algorithme de reconstruction. Les scripts sont repris d'[ici](https://github.com/valsdav/DeepSuperCluster/tree/master/Evaluation/GraphSC/reco_comparison).
 
+GDocs notes utilisation CMSSW : [gdoc](https://docs.google.com/document/d/e/2PACX-1vTM1CpwjmK7cyZcouKtAbmsfWkxVWPzJv-mXKhZiQ5FZ_PTW8pRVoJB55qp7oc11fyTMzY1Pmi9TuM4/pub)
+
 ## Reco dumper
 Ceci est le procédé général pour produire dans un format pratique les données venant de l'algorithme de reconstruction. Il permet d'obtenir les données pour **Moustache** ou pour **DeepSC** avec les stratégies A, B, C ou D pour des données produites par ParticleGun pour électrons/photons. Ce dumper transforme des données stockées dans des arbres (`.root`) en données stockées sous tableaux panda. Les notebooks analysent les données stockées dans ces tableaux. Le script réalisant le dumper est `reco_dumper.py`, les autres permettent d'automatiser le procédé.
 
