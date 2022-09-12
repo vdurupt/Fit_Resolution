@@ -29,7 +29,7 @@ Pour chaque objet (photon/électron), les informations suivantes sont sauvegard�
 - Number of event and run to be able to perform matching in the case the reconstruction is done two times with different algos.
 
 ## Comment faire tourner le dumper
-Pour faire tourner le dumper avec condor, il faut éxécuter `condor_reco_dumper.py` :
+Pour faire tourner le dumper avec condor, il faut éxécuter `condor_reco_dumper.py` avec la commande suivante :
 `python3 condor_reco_dumper.py` 
 
 Les options sont :
